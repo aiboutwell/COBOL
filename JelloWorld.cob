@@ -14,7 +14,7 @@
            01 YourName PIC X(15).
            01 Choice PIC 9.
            01 YourFlavor PIC X(15).
-           01 ToClose PIC X VALUE 'N'.
+           01 Again PIC X VALUE 'Y'.
 
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
@@ -24,7 +24,7 @@
        ACCEPT YourName
        DISPLAY " "
        DISPLAY "Jello, " YourName
-       PERFORM UNTIL ToClose='Y'
+       PERFORM UNTIL Again='N' 
                DISPLAY "Choose one " WITH NO ADVANCING
                DISPLAY "of our 6 delicious flavors. "
                DISPLAY "   "
@@ -45,7 +45,7 @@
                    WHEN 4 MOVE 'Orange' TO YourFlavor
                    WHEN 5 MOVE 'Lemon' TO YourFlavor
                    WHEN 6 MOVE 'Lime' TO YourFlavor
-                   WHEN 0 MOVE 'Y' TO ToClose
+                   WHEN 0 MOVE 'N' TO Again
                    WHEN OTHER MOVE 'ERROR' TO YourFlavor
                END-EVALUATE
                DISPLAY "   "
@@ -59,7 +59,7 @@
                DISPLAY "the store, be sure to look " WITH NO ADVANCING
                DISPLAY "for the box with the Big Red " WITH NO ADVANCING
                DISPLAY "Letters."
-               DISPLAY "J-E-L-L--O!"
+               DISPLAY "J-E-L-L--O!"          
                   STOP RUN.
 
        END PROGRAM JELLO-WORLD.
