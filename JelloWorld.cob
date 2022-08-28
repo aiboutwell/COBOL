@@ -1,5 +1,7 @@
-      * Need to validate the choice is an integer. Shows desired error
-      * but ends program.
+      * Need to validate the choice is an integer. If I use 0 to signal
+      * quit - The desired error is shown but ends program.
+      * When a char is typed the computer thinks it's a zero. 
+      * I can change quit to 9 as a work around for now.
        IDENTIFICATION DIVISION.
        PROGRAM-ID. JELLO-WORLD.
        AUTHOR. Amanda Boutwell.
@@ -34,7 +36,7 @@
                DISPLAY "4: Orange"
                DISPLAY "5: Lemon"
                DISPLAY "6: Lime"
-               DISPLAY "0: Quit"
+               DISPLAY "9: Quit"
                DISPLAY " "
                ACCEPT Choice
                DISPLAY " "
@@ -45,7 +47,7 @@
                    WHEN 4 MOVE 'Orange' TO YourFlavor
                    WHEN 5 MOVE 'Lemon' TO YourFlavor
                    WHEN 6 MOVE 'Lime' TO YourFlavor
-                   WHEN 0 MOVE 'N' TO Again
+                   WHEN 9 MOVE 'N' TO Again
                    WHEN OTHER MOVE 'ERROR' TO YourFlavor
                END-EVALUATE
                DISPLAY "   "
